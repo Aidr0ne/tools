@@ -233,6 +233,10 @@ class MainWindow(QMainWindow):
             with open(file_name, "wb") as f:
                 pickle.dump(self.data, f)
 
+            meta_path = file_name + ":meta"
+            with open(meta_path, "wb") as f:
+                pickle.dump(self.meta, f)
+
     def zoom_in(self):
         self.cell_size += 10
         self.update_grid()
